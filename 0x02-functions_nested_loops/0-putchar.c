@@ -1,9 +1,10 @@
 #include "main.h"
 /**
- * main - Functions, nested loops
- * description: 'prints _putchar, followed by a new line'
+ * main - print _putchar
+ * description: 'prints putchar followed by a new line'
  * Return: always 0
  */
+
 int main(void)
 {
 	_putchar('_');
