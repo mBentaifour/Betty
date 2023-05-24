@@ -30,19 +30,19 @@ void jack_bauer(void)
 				m1 = 0;
 				while (m1 <= 9)
 				{
-					-putchar('0' + h2);
-					-putchar('0' + h1);
-					-putchar(':');
-					-putchar('0' + m2);
-					-putchar('0' + m1);
-					-putchar('\n');
-					m1++;
+					putchar('0' + h2);
+					putchar('0' + h1);
+					putchar(':');
+					putchar('0' + m2);
+					putchar('0' + m1);
+					putchar('\n');
+					
 				}
-				m2++;
+				m1++;
 			}
-			h1++;
+			m2++;
 		}
-		h2++;
-	}
+		h1++;
+	}h2++;
 }
 
