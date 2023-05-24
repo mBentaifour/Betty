@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * print_islower - a function that checks for lowercase character,
- *
+ * _islower - a function that checks for lowercase character,
+ * Return: returns 1 if 'c' is lowercase
+ *         Returns 0 otherwise
  */
 
-void functions_nested_loops(void)
+int _islower(int c);
 {
-	int c;
-	        if (c > 96 && c < 123)
-	        	return (1);
-		return (0)
+	if (c > 96 && c < 123)
+		return (1);
+	return (0);
 }
