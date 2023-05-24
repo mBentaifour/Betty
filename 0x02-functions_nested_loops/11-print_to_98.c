@@ -6,8 +6,7 @@
  *         by space and number should be
  *         printed in order
  * @n: input
- * Return: no return
- */
+*/
 
 void print_to_98(int n)
 {
