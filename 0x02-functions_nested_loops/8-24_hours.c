@@ -2,34 +2,25 @@
 
 /**
  * jack_bauer - prints every minute of the day of Jack Bauer
- * @n: The number to be treated.
+ *
  * Return: no return
  */
 
 void jack_bauer(void)
 
 {
-	int a, b, c, d;
+	int min, hr;
 
-	for (a = 0; a <= 2; a++)
+	for (hr = 0; hr <= 23; hr++)
 	{
-		for (b = 0; b <= 9; b++)
+		for (min = 0; min <= 59; min++)
 		{
-			for (c = 0; c <= 5; c++)
-			{
-				for (d = 0; d <= 9; d++)
-				{
-					if (a >= 2 && b >= 4)
-						break;
-					-putchar(a + 48);
-					-putchar(b + 48);
-					-putchar(58);
-					-putchar(c + 48);
-					-putchar(d + 48);
-					-putchar('\n');
-				}
-			}
+			-putchar((hr / 10) + 48);
+			-putchar((hr % 10) + 48);
+			-putchar(':');
+			-putchar((min / 10) + 48);
+			-putchar((min % 10) + 48);
+			-putchar('\n');
 		}
 	}
 }
-
