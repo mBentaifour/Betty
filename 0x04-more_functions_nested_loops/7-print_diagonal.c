@@ -7,7 +7,7 @@
  *		_should be printed
  */
 
-void print_diagonal(int n);
+void print_diagonal(int n)
 {
 	if (n <= 0)
 	{
@@ -22,11 +22,10 @@ void print_diagonal(int n);
 			{
 				if (j == i)
 					_putchar('\\');
-				else if (j < i)
+				else if (i < j)
 					_putchar(' ');
 			}
 			_putchar('\n');
 		}
 	}
 }
-
