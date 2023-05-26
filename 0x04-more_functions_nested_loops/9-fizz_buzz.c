@@ -3,38 +3,33 @@
 
 /**
  * main - prints the numbers from 1 to 100
- *		 followed by a new line
  * numbers that are multiples of 3 print Fizz
  * numbers that are multiples of 5 print Buzz
  * numbers that are multiples of 3 and 5 print FizzBuzz
  * Each number or word should be separated by a space
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	int i;
+	int num;
 
-	for (i = 1; i <= 100; i++)
+	for (num = 1; num <= 100; num++)
 	{
-		if (i % 3 == 0 && i % 5 != 0)
-		{
-			printf(" Fizz");
-		} else if (i % 5 == 0 && i % 3 != 0)
-		{
-			printf(" Buzz");
-		} else if (i % 3 == 0 && i % 5 != 0)
-		{
-			printf(" FizzBuzz");
-		} else if (i == 1)
-		{
-			printf("%d", i);
-		} else
-		{
-			printf(" %d", i);
-		}
+		if (num % 3 == 0 && !(num % 5 == 0))
+			printf("Fizz");
+		else if (num % 5 == 0 && !(num % 3 == 0))
+			printf("Buzz");
+		else if (num % 3 == 0 && num % 5 == 0)
+			printf("FizzBuzz");
+		else
+			printf("%d", num);
+
+		if (num != 100)
+			printf(" ");
+		else
+			printf("\n");
 	}
-	_putchar('\n');
 
 	return (0);
 }
+
