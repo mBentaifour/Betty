@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * -print_numbers - a function that print 0 to 9
- * using _putchar twince
+ * print_numbers - print 0 - 9
+ * only using _putchar twice
  *
  * Return: Always 0 (Success)
  */
