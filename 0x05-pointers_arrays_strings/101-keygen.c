@@ -4,21 +4,22 @@
 
 /**
  * main - generates random passwords for 101-crackme
- * Return: 0
+ * Return: zero
  */
 
 int main(void)
 {
-	int line;
-	char x;
+	int sum;
+	char c;
 
 	srand(time(NULL));
-	while (line <= 2645)
+	while (sum <= 2645)
 	{
-		x = rand() % 128;
-		line += x;
-		putchar(x);
+		c = rand() % 128;
+		sum += c;
+		putchar(c);
 	}
-	putchar(2772 - line);
+	putchar(2772 - sum);
 	return (0);
 }
+
