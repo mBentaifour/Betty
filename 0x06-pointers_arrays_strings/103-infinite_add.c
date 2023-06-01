@@ -1,7 +1,6 @@
 #include "main.h"
-
 /**
- * *infinite_add - a function that adds two numbers
+ * infinite_add - a function that adds two numbers
  * @n1: first number
  * @n2: second number
  * @r: result
