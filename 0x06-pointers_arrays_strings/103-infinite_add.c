@@ -1,17 +1,16 @@
 #include "main.h"
 /**
- * _infinite_add - a function that adds two numbers
+ * infinite_add - a function that adds two numbers
+ * local variable declaration
  * @n1: first number
  * @n2: second number
  * @r: result
  * @size_r: result lenght
  * Return: sum
- *
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	/* local variable declaration */
 	int i = 0, j = 0, k, l = 0, f, s, d = 0;
 
 	while (n1[i] != '\0')
