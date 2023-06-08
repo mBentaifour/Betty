@@ -1,6 +1,6 @@
 #include "main.h"
 
-int sqrt_alt(int n,int i);
+int sqrt_alt(int n, int i);
 /**
  * _sqrt_recursion - returns the natural square root of a number.
  * @n: int
@@ -16,13 +16,13 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * _sqrt_recursion - returns the natural square root of a number.
+ * sqrt_alt - returns the natural square root of a number.
  * @n: int
- * @imp: square root
+ * @i: alternative var
  * Return: If n does not have a natural square root,
  * the function should return -1
  */
-int sqrt_alt(int n,int i)
+int sqrt_alt(int n, int i)
 {
 	if (i * i == n)
 		return (i);
@@ -30,5 +30,5 @@ int sqrt_alt(int n,int i)
 		return (-1);
 	if (i < 0)
 		return (-1);
-	return (sqrt_alt(n ,i + 1));
+	return (sqrt_alt(n, i + 1));
 }
