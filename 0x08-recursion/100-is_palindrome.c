@@ -1,14 +1,13 @@
 #include "main.h"
 
- /**
-  * last_index - returns the last index of a string
-  * @s: pointer to string
-  * Return: int
-  */
 
-int check(char *s, int start, int end, int mod);
-int is_palindrome(char *s);
-int last_index(char *s)
+/**
+ * _last_index - returns the last index of a string
+ * @s: pointer to string
+ * Return: int
+ */
+
+int last_index(char *s);
 {
 	int n = 0;
 
@@ -16,29 +15,17 @@ int last_index(char *s)
 		n += last_index(s + 1) + 1;
 	return (n);
 }
- /**
-  * _is_palindrome - check if a string is a palindrome
-  * @s: string to check
-  * Return: 0 or 1
-  */
 
-int is_palindrome(char *s)
-{
-	int end = last_index(s);
+/**
+ * _check - checker for palindrome
+ * @s: string
+ * @start: int moves from rignt to left
+ * @end: int moves from left to right
+ * @mod: int
+ * Return: 0 or 1
+ */
 
-	return (check(s, 0, end - 1, end % 2));
-}
-
- /**
-  * _check - checker for palindrome
-  * @s: string to evaluate
-  * @start: int moves from rignt to left
-  * @end: int moves from left to right
-  * @mod: int
-  * Return: 0 or 1
-  */
-
-int check(char *s, int start, int end, int mod)
+int check(char *s, int start, int end, int mod);
 {
 	if ((start == end && mod != 0) || (start == end + 1 && mod == 0))
 		return (1);
@@ -46,4 +33,17 @@ int check(char *s, int start, int end, int mod)
 		return (0);
 	else
 		return (check(s, start + 1, end - 1, mod));
+}
+
+/**
+ * is_palindrome - check if a string is a palindrome
+ * @s: string to check
+ * Return: 0 or 1
+ */
+
+int is_palindrome(char *s)
+{
+	int end = last_index(s);
+
+	return (check(s, 0, end - 1, end % 2));
 }
