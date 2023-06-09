@@ -5,10 +5,7 @@
   * @s: pointer to string
   * Return: int
   */
-
-int is_palindrome(char *s);
-int check(char *s, int start, int end, int mod);
-int last_index(char *s)
+int last_index(char *s);
 {
 	int n = 0;
 
@@ -17,19 +14,20 @@ int last_index(char *s)
 	return (n);
 }
  /**
-  * is_palindrome - check if a string is a palindrome
+  * _is_palindrome - check if a string is a palindrome
   * @s: string to check
   * Return: 0 or 1
   */
 
-int is_palindrome(char *s)
+int is_palindrome(char *s);
 {
 	int end = last_index(s);
 
 	return (check(s, 0, end - 1, end % 2));
 }
+
  /**
-  * check - checker for palindrome
+  * _check - checker for palindrome
   * @s: string to evaluate
   * @go: int moves from rignt to left
   * @end: int moves from left to right
@@ -37,7 +35,7 @@ int is_palindrome(char *s)
   * Return: 0 or 1
   */
 
-int check(char *s, int go, int end, int mod)
+int check(char *s, int go, int end, int mod);
 {
 	if ((go == end && mod != 0) || (go == end + 1 && mod == 0))
 		return (1);
