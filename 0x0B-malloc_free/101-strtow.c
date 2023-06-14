@@ -4,7 +4,7 @@
  * count_words - Counts the number of words in a string
  * @s: The string to count words in
  *
- * Return: Number of words
+ * Return: int of Number of words
  */
 int count_words(char *s)
 {
@@ -18,7 +18,7 @@ int count_words(char *s)
 				len++;
 		}
 		else if (i == 0)
-			i++;
+			len++;
 	}
 	len++;
 	return (len);
