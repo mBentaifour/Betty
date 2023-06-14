@@ -2,30 +2,26 @@
 
 /**
  * count_words - Counts the number of words in a string
- * @str: The string to count words in
+ * @s: The string to count words in
  *
  * Return: Number of words
  */
-int count_words(char *str)
+int count_words(char *s)
 {
-	int count = 0;
-	int i, len = strlen(str);
-	int in_word = 0;
+	int i, len = 0;
 
-	for (i = 0; i < len; i++)
+	for (i = 0; s[i]; i++)
 	{
-		if (str[i] != (' ') && !in_word)
+		if (s[i] == ' ')
 		{
-			count++;
-			in_word = 1;
+			if (s[i + 1] != ' ' && s[i + 1] != '\0')
+				len++;
 		}
-		else if (str[i] == (' '))
-		{
-			in_word = 0;
-		}
+		else if (i == 0)
+			i++;
 	}
-
-	return (count);
+	len++;
+	return (len);
 }
 
 /**
@@ -36,70 +32,44 @@ int count_words(char *str)
  */
 char **strtow(char *str)
 {
-	char **words;
-	int word_count, i, j, k, len, in_word;
+	char **w;
+	int i, j, k, len, n = 0, wc = 0;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-	word_count = count_words(str);
-	if (word_count == 0)
+	n = count_words(str);
+	if (n == 1)
 		return (NULL);
-
-	words = malloc((word_count + 1) * sizeof(char *));
-	if (words == NULL)
+	w = (char **)malloc(n * sizeof(char *));
+	if (w == NULL)
 		return (NULL);
-
-	in_word = 0;
-	j = 0;
-	len = 0;
-	for (i = 0; str[i] != '\0'; i++)
+	w[n - 1] = NULL;
+	i = 0;
+	while (str[i])
 	{
-		if (str[i] != ' ' && !in_word)
+		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
 		{
-			in_word = 1;
-			len++;
-		}
-		else if (str[i] == ' ' && in_word)
-		{
-			in_word = 0;
-			words[j] = malloc((len + 1) * sizeof(char));
-			if (words[j] == NULL)
+			for (j = 1; str[i + j] != ' ' && str[i + j]; j++)
+				;
+			j++;
+			w[wc] = (char *)malloc(j * sizeof(char));
+			j--;
+			if (w[wc] == NULL)
 			{
-				for (k = 0; k < j; k++)
-					free(words[k]);
-				free(words);
+				for (k = 0; k < wc; k++)
+					free(w[k]);
+				free(w[n - 1]);
+				free(w);
 				return (NULL);
 			}
-			strncpy(words[j], str + i - len, len);
-			words[j][len] = '\0';
-			len = 0;
-			j++;
+			for (len = 0; len < j; len++)
+				w[wc][len] = str[i + len];
+			w[wc][len] = '\0';
+			wc++;
+			i += j;
 		}
-		else if (str[i] != ' ' && in_word)
-		{
-			len++;
-		}
+		else
+			i++;
 	}
-
-	if (in_word)
-	{
-		words[j] = malloc((len + 1) * sizeof(char));
-	}
-	{
-	if (words[j] == NULL)
-		{
-			for (k = 0; k <= j; k++)
-				free(words[k]);
-			free(words);
-			return (NULL);
-		}
-
-		strncpy(words[j], str + i - len, len);
-		
-		words[j][len] = '\0';
-		j++;
-	}
-	
-	words[j] = (NULL);
-	return (words);
+	return (w);
 }
