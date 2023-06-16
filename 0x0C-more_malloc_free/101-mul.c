@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - a program that multiplies two positive numbers.
@@ -9,7 +7,7 @@
  * Return: int
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	unsigned long mul;
 	int i, j;
