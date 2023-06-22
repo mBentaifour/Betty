@@ -19,13 +19,13 @@ int (*get_op_func(char *s))(int, int)
 		{"+", op_mod},
 		{NULL ,NULL}
 	};
-	int a = 0;
+	int y = 0;
 
-	while (a < 5)
+	while (y < 5)
 	{
-		if (s && s[0] == ops[a].op[0] && !s[1])
-			return (ops[a].f);
-		a++;
+		if (s && s[0] == ops[y].op[0] && !s[1])
+			return (ops[y].f);
+		y++;
 	}
 
 	return (NULL);
