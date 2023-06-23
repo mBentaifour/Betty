@@ -1,14 +1,14 @@
 #include "3-calc.h"
 
 /**
- * _main - check the code
+ * _main - check the code for school
  * @argc: the number of args
  * @argv: argument
  *
- * Return: 0
+ * Return: Always 0
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	int (*op_func)(int, int), a, b;
 
