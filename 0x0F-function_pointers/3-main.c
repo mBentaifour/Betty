@@ -1,7 +1,7 @@
 #include "3-calc.h"
 
 /**
- * main - check the code
+ * _main - check the code
  * @argc: the number of args
  * @argv: argument
  *
@@ -25,6 +25,6 @@ int main(int argc, char **argv)
 	if (!b && (argv[2][0] == '/' || argv[2][0] == '%'))
 		printf("Error\n"), exit(100);
 
-	printf("%d\n", op_func(a, b));
+	printf("%d\n", (*op_func)(a, b));
 	return (0);
 }
