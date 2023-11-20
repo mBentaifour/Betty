@@ -5,7 +5,7 @@
 * print_listint - a Prints elements listint_t list
 * @h: Pointer to the head of list_t list
 *
-* Return: number of nodes
+* Return: number of killnod
 */
 
 size_t print_listint(const listint_t *h)
