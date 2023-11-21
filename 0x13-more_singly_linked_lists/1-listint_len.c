@@ -10,13 +10,12 @@
 
 size_t listint_len(const listint_t *h)
 {
-        size_t killnode = 0;
+	size_t killnode = 0;
 
-        while (h)
-        {
-                killnode++;
-                h = (*h).next;
-        }
-
-        return (killnode);
+	while (h)
+	{
+		killnode++;
+		h = (*h).next;
+	}
+	return (killnode);
 }
