@@ -11,25 +11,25 @@
 
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-        listint_t *neo, *last;
+	listint_t *neo, *last;
 
-        neo = malloc(sizeof(listint_t));
-        if (neo == NULL)
-                return (NULL);
+	neo = malloc(sizeof(listint_t));
+	if (neo == NULL)
+		return (NULL);
 
-        (*neo).n = n;
-        (*neo).next = NULL;
+	(*neo).n = n;
+	(*neo).next = NULL;
 
-        if (*head == NULL)
-                *head = neo;
+	if (*head == NULL)
+		*head = neo;
 
-        else
-        {
-                last = *head;
-		while ((*last).next != NULL)
-		      last = (*last).next;
-                (*last).next = neo;
-        }
+	else
+	{
+		last = *head
+			while ((*last).next != NULL)
+				last = (*last).next;
+		(*last).next = neo;
+	}
 
-        return (*head);
+	return (*head);
 }
