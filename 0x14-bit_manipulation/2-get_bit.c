@@ -7,7 +7,7 @@
 * @index: where index is the index
 * starting from 0 of the bit you want to get
 *
-* Return: the Value of the bit at index 
+* Return: the Value of the bit at index
 *         index or -1 if an error occured
 */
 
