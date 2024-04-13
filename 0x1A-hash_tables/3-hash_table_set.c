@@ -5,7 +5,6 @@
 *@ht: - hash table
 *@key: key used to make hashing
 *@value: value of item crosponding to key
-
 *Return: 0 on faliure and 1 on success
 */
 
